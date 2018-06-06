@@ -29,6 +29,10 @@ main() {
 	done
 
 	local -r metadataurl="http://169.254.169.254/latest"
+
+	curl -s -m 1 "${metadataurl}" || \
+		errx "this script needs to be executed on an Amazon EC2 instance"
+
 	local -r region=$(curl -s "${metadataurl}/dynamic/instance-identity/document" | \
 		awk '/region/ { print $3 }' | \
 		cut -d '"' -f 2)
