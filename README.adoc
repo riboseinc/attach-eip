@@ -11,9 +11,16 @@ If no `instance-id` parameter is specified then the id of the running EC2 instan
 == Usage
 
 ```sh
-sudo ./attach-eip.sh <EIP> [instance-id]
+sudo ./attach-eip.sh <EIP allocation id> [instance-id]
 ```
 
+=== Example run
+
+```console
+$ sudo ./attach-eip.sh eipalloc-f8bd59cf
+attached 'eipalloc-f8bd59cf' to 'i-00176ad7fc46ae90b'"
+$
+```
 
 == Contributions
 

@@ -7,7 +7,10 @@
 # If no 'instance-id' parameter is specified on then the id of the running EC2 instance will be used.
 #
 # Usage:
-# sudo ./attach-eip.sh <EIP> [instance-id]
+# sudo ./attach-eip.sh <EIP allocation id> [instance-id]
+#
+# Example:
+# $ sudo ./attach-eip.sh eipalloc-f8bd59cf
 
 set -ueo pipefail
 
