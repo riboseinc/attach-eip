@@ -5,7 +5,7 @@
 
 This script attaches an EIP to an EC2 instance.
 
-If no 'instance-id' parameter is specified then the id of the running EC2 instance will be used.
+If no `instance-id` parameter is specified then the id of the running EC2 instance will be used.
 
 
 == Usage
