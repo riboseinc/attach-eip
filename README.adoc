@@ -1,0 +1,20 @@
+= attach-eip.sh
+
+
+== Description
+
+This script attaches an EIP to an EC2 instance.
+
+If no 'instance-id' parameter is specified on then the id of the running EC2 instance will be used.
+
+
+== Usage
+
+```sh
+sudo ./attach-eip.sh <EIP> [instance-id]
+```
+
+
+== Contributions
+
+Feel free to open an issue or to send a pull request.
