@@ -22,9 +22,20 @@ errx() {
 	exit 1
 }
 
+usage() {
+	echo -e "${__progname}: <EIP allocation id> [instance-id]" >&2
+
+	exit 1
+}
+
 main() {
 	[ "${EUID}" -ne 0 ] && \
 		errx "need root"
+
+	[[ "$#" -lt 1 ]] && \
+		usage
+
+	local -r eip="$1"
 
 	for bin in curl aws; do
 		which "${bin}" >/dev/null 2>&1 || \
@@ -41,7 +52,7 @@ main() {
 		cut -d '"' -f 2)
 
 	if [[ "$#" -ge 2 ]]; then
-		local -r instanceid="$1"
+		local -r instanceid="$2"
 	else
 		local -r instanceid=$(curl -s "${metadataurl}/meta-data/instance-id")
 	fi
