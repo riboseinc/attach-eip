@@ -11,6 +11,11 @@
 #
 # Example:
 # $ sudo ./attach-eip.sh eipalloc-f8bd59cf
+# {
+#     "AssociationId": "eipassoc-5889ef95"
+# }
+# attached 'eipalloc-f8bd59cf' to 'i-00176ad7fc46ae90b'"
+# $
 
 set -ueo pipefail
 
@@ -63,7 +68,7 @@ main() {
 		--region "${region}" || \
 			errx "aws ec2 associate-address '${eip}' to instance '${instanceid}' failed"
 
-	echo "attached '${eip}' to '${instance_id}'"
+	echo "attached '${eip}' to '${instanceid}'"
 
 	return 0
 }

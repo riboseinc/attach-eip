@@ -18,6 +18,9 @@ sudo ./attach-eip.sh <EIP allocation id> [instance-id]
 
 ```console
 $ sudo ./attach-eip.sh eipalloc-f8bd59cf
+{
+    "AssociationId": "eipassoc-5889ef95"
+}
 attached 'eipalloc-f8bd59cf' to 'i-00176ad7fc46ae90b'"
 $
 ```
